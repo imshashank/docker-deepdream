@@ -2,8 +2,6 @@
 FROM ipython/ipython:3.x
 
 
-VOLUME /notebooks
-WORKDIR /notebooks
 
 EXPOSE 8888
 
@@ -31,6 +29,8 @@ RUN make all
 
 RUN pip install pillow
 
-ENTRYPOINT ipython
+VOLUME /notebooks
 WORKDIR /notebooks
-CMD ["notebook", "--no-browser",  "--port", "8888"]
+
+ADD run.sh /usr/bin/run.sh
+CMD ["run.sh"]
