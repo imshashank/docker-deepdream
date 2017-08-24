@@ -26,6 +26,8 @@ RUN cat python/requirements.txt | xargs -L 1 sudo pip install && \
 VOLUME /notebooks
 WORKDIR /notebooks
 
+
 ADD run.sh /usr/bin/run.sh
+RUN chmod +x /usr/bin/run.sh
 EXPOSE 8888
 CMD ["run.sh"]
