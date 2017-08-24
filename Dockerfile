@@ -4,7 +4,7 @@ FROM ipython/ipython:3.x
 # You can mount your own SSL certs as necessary here
 ENV PASSWORD "pass"
 ENV USE_HTTP 1
-RUN apt-get update
+RUN apt-get -y update
 RUN apt-get install -y gfortran liblapack-dev libprotobuf-dev libleveldb-dev libsnappy-dev libopencv-dev libhdf5-serial-dev protobuf-compiler libgflags-dev libgoogle-glog-dev liblmdb-dev
 
 RUN apt-get install -y --no-install-recommends libboost-all-dev
